@@ -1,0 +1,6 @@
+FROM ibmcom/swift-ubuntu 
+
+COPY .build/release/static-kitura /static-kitura
+COPY .build/release/libCHTTPParser.so /libCHTTPParser.so
+
+CMD '/static-kitura'
