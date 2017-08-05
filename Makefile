@@ -8,7 +8,7 @@ build_release:
 	${RELEASE_BUILD_COMMAND}
 
 build_linux_small:
-	docker run -it --rm -v $(shell pwd):/src -w /src ibmcom/kitura-ubuntu ${RELEASE_BUILD_COMMAND} -Xlinker -L/usr/lib/swift/linux
+	docker run -it --rm -v $(shell pwd):/src -w /src ibmcom/kitura-ubuntu ${STATIC_BUILD_COMMAND} -Xlinker -L/usr/lib/swift/linux
 	docker run -it --rm -v $(shell pwd):/src -w /src ibmcom/kitura-ubuntu /bin/bash -c "cp /usr/lib/swift/linux/*.so /src/linux"
 
 build_linux_large:
